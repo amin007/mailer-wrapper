@@ -6,6 +6,7 @@ use NazrolTech\Mailer\Exceptions\ViewNotFoundException;
 class View  {
 
     protected $fileSystem;
+    protected $defaultPath = (string) 'emails';
 
     public function __construct(Filesystem $filesystem)
     {
@@ -49,7 +50,7 @@ class View  {
      * @return mixed
      */
     private function loadViewPath() {
-        return config('view.path');
+        return config('view.paths');
     }
 
     /**

@@ -7,7 +7,7 @@ Package still on development.
 Basic usage
 ```php
     public function SendmailController(Mailer $mailer) {
-        (new MailerBuilder($this->mailer,new View))
+        (new MailerBuilder($this->mailer))
                     ->setView('emails.welcome')
                     ->setVariable(['user' => 'example'])
                     ->setSentTo('to@mailtrap.io')
@@ -21,7 +21,7 @@ Basic usage
 Usage with CCable
 ```php
      public function SendmailController(Mailer $mailer) {
-            (new MailerBuilder($this->mailer,new View))
+            (new MailerBuilder($this->mailer))
                         ->setView('emails.welcome')
                         ->setVariable(['user' => 'example'])
                         ->setSentTo('to@mailtrap.io')

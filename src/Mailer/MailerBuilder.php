@@ -1,6 +1,7 @@
 <?php
 namespace NazrolTech\Mailer;
 
+use Illuminate\Filesystem\Filesystem;
 use NazrolTech\Mailer\Contracts\Mailerinterface;
 use NazrolTech\Mailer\Presenter\View;
 use Illuminate\Mail\Mailer;
@@ -33,12 +34,12 @@ class MailerBuilder implements Mailerinterface {
     protected $mailer;
     protected $ccAble;
 
-    public function __construct(Mailer $mailer,View $view)
+    public function __construct(Mailer $mailer)
     {
-        $this->view = $view;
         $this->mailer = $mailer;
+        //load view class presenter with constructor dependencies
+        $this->view = new View(new Filesystem);
     }
-
     /**
      * @param $viewPath
      * @return $this
