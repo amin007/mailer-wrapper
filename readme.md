@@ -5,7 +5,7 @@ Package still on development.
 
 
 Basic usage
-```
+```php
     public function SendmailController(Mailer $mailer) {
         (new MailerBuilder($this->mailer,new View))
                     ->setView('emails.welcome')
@@ -19,7 +19,7 @@ Basic usage
 
 
 Usage with CCable
-```
+```php
      public function SendmailController(Mailer $mailer) {
             (new MailerBuilder($this->mailer,new View))
                         ->setView('emails.welcome')
